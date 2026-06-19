@@ -40,6 +40,16 @@
   h1{font-size:clamp(2.6rem,6.4vw,64px);font-weight:500;line-height:1.04;letter-spacing:-.01em;margin-bottom:24px}
   h1 .a{color:var(--primary)}
   .lede{font-size:18px;color:var(--text-2);max-width:600px;margin-bottom:28px}
+  .board{background:var(--surface);border-radius:var(--r-card);padding:24px 26px;margin-bottom:14px;box-shadow:0 10px 30px rgba(17,24,39,.10)}
+  .board .bt{color:#A1A1AA;font-size:.78rem;margin-bottom:16px;display:block}
+  .bar{display:flex;align-items:center;gap:14px;margin:11px 0}
+  .bar .who{color:#fff;font-size:.85rem;width:185px;flex-shrink:0;text-align:right}
+  .bar .track{flex:1;height:14px;background:#2c2c2f;border-radius:9999px;overflow:hidden}
+  .bar .fill{display:block;height:100%;background:#6b6b70;border-radius:9999px}
+  .bar .fill.us{background:var(--accent)}
+  .bar .pct{width:44px;color:#fff;font-weight:600;font-size:.92rem}
+  .bar.usrow .who,.bar.usrow .pct{color:var(--accent);font-weight:700}
+  @media(max-width:680px){.bar .who{width:118px;font-size:.76rem}}
   .proof{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
   .proof .stat{background:var(--surface);color:#fff;border-radius:var(--r-card);padding:18px 22px;min-width:150px;flex:1}
   .proof .num{display:block;font-size:2rem;font-weight:600;letter-spacing:-1px;line-height:1;color:var(--accent)}
@@ -97,9 +107,15 @@
     <span class="eyebrow mono rise">A Spanda Works product</span>
     <h1 class="rise">Code as good as the best AI, <span class="a">for a fraction of the cost.</span></h1>
     <p class="lede rise">Here's how Tīrtha works: a small, fast AI writes the code first. Then we actually run it to make sure it works. Only the really hard problems get sent to a big, expensive AI — so you get top-quality code without paying the top price every time.</p>
+    <div class="board rise">
+      <span class="bt mono">How often each one gets a coding problem right →</span>
+      <div class="bar usrow"><span class="who">Tīrtha (us)</span><span class="track"><span class="fill us" style="width:95%"></span></span><span class="pct">95%</span></div>
+      <div class="bar"><span class="who">The most expensive AI</span><span class="track"><span class="fill" style="width:96%"></span></span><span class="pct">96%</span></div>
+      <div class="bar"><span class="who">Another top AI</span><span class="track"><span class="fill" style="width:95%"></span></span><span class="pct">95%</span></div>
+      <div class="bar"><span class="who">A small AI by itself</span><span class="track"><span class="fill" style="width:82%"></span></span><span class="pct">82%</span></div>
+    </div>
     <div class="proof rise">
-      <div class="stat"><span class="num">95%</span><span class="cap">gets coding problems right about as often as the biggest, most expensive AI</span></div>
-      <div class="stat"><span class="num">5× less</span><span class="cap">than using the expensive AI for everything — it only calls the big one when it has to</span></div>
+      <div class="stat"><span class="num">5× less</span><span class="cap">it costs about five times less to run than sending every problem to the expensive AI</span></div>
       <div class="stat"><span class="num">your dial</span><span class="cap">turn it up for accuracy, down to save money — your choice</span></div>
     </div>
     <a class="proof-link mono rise" href="results.html">See how we measured it →</a>
