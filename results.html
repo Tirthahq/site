@@ -12,6 +12,7 @@
   body{background:var(--bg);color:var(--text);font-family:"Geist",ui-sans-serif,system-ui,sans-serif;line-height:1.6}
   .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
   a{color:inherit;text-decoration:none}
+  canvas#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
   .wrap{position:relative;z-index:1;width:min(1140px,calc(100% - 48px));margin:0 auto}
 
   nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--border)}
@@ -30,15 +31,14 @@
   .eyebrow{color:var(--accent);margin-bottom:22px;display:inline-block}
   h1{font-size:clamp(2.4rem,5.6vw,56px);font-weight:500;line-height:1.05;letter-spacing:-.01em;margin-bottom:22px}
   h1 .a{color:var(--primary)}
-  .lede{font-size:18px;color:var(--text-2);max-width:620px}
+  .lede{font-size:18px;color:var(--text-2);max-width:640px}
   .draftpill{display:inline-block;margin-top:22px;border:1px solid var(--border);border-radius:var(--r-pill);padding:5px 14px;color:var(--text-2)}
 
   section.feat{padding:64px 0}
-  .feat-head{margin-bottom:28px;max-width:640px}
+  .feat-head{margin-bottom:28px;max-width:660px}
   .feat-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:500;line-height:1.1;margin-top:12px}
   .feat-head p{color:var(--text-2);margin-top:10px}
 
-  /* dark surface card, exactly like Auralis */
   .panel{background:var(--surface);color:#fff;border-radius:var(--r-card);padding:32px;box-shadow:0 10px 30px rgba(17,24,39,.10)}
   .panel .k{color:var(--accent);display:block;margin-bottom:18px}
   table{width:100%;border-collapse:collapse;font-size:15px}
@@ -59,6 +59,7 @@
   .lg{display:flex;gap:22px;margin-top:16px;font-size:13px;color:#A1A1AA;flex-wrap:wrap}
   .lg span{display:inline-flex;align-items:center;gap:8px}.sw{width:22px;height:3px;border-radius:2px;display:inline-block}
   .cap{color:#A1A1AA;font-size:14px;margin-top:14px}
+  .note{color:var(--text-2);font-size:.92rem;margin-top:20px;max-width:640px}
   svg{width:100%;height:auto;display:block}
 
   footer{border-top:1px solid var(--border);padding:30px 0 56px;color:var(--text-2);font-size:.88rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
@@ -68,12 +69,13 @@
   @media(max-width:820px){nav .links{display:none}.cards{grid-template-columns:1fr}}
 </style></head>
 <body>
+<canvas id="fx"></canvas>
 <div class="wrap">
   <nav>
     <a class="brand" href="spanda-auralis.html"><span class="dot"></span>Tīrtha</a>
     <div class="links">
       <a href="spanda-auralis.html#how">How it works</a>
-      <a href="spanda-auralis.html#why">Why us</a>
+      <a href="spanda-auralis.html#speed">Speed</a>
       <a class="on" href="results.html">Results</a>
       <a href="mailto:hello@spandaworks.com">Contact</a>
     </div>
@@ -84,25 +86,25 @@
   </nav>
 
   <header class="hero">
-    <span class="eyebrow mono rise">Published results</span>
-    <h1 class="rise">Frontier accuracy. <span class="a">A fraction of the cost.</span> Measured.</h1>
-    <p class="lede rise">A small model does the routine work; a verification layer decides when to escalate. The result is frontier-level accuracy with most requests served on the cheap tier — leak-proof and reproducible.</p>
-    <span class="draftpill mono rise">Draft · figures lock when the full-benchmark run completes</span>
+    <span class="eyebrow mono rise">The numbers</span>
+    <h1 class="rise">As good as the best AI, <span class="a">for a fraction of the cost.</span> And we measured it.</h1>
+    <p class="lede rise">A small AI does the everyday work. We run every answer to make sure it's right, and only send the truly hard problems to a big, expensive AI. You get top-quality results — and most of the work never touches the expensive one.</p>
+    <span class="draftpill mono rise">Draft · final numbers lock when our full test run finishes</span>
   </header>
 
   <section class="feat">
     <div class="feat-head">
-      <span class="mono" style="color:var(--accent)">Head-to-head — HumanEval+ · 164 problems · leak-proof</span>
-      <h2>Statistical parity with the frontier — at 43% served free.</h2>
+      <span class="mono" style="color:var(--accent)">Head-to-head · 164 real coding problems</span>
+      <h2>Right there with the best AI — and nearly half the work is free.</h2>
     </div>
     <div class="panel rise">
-      <span class="k mono">pass@1</span>
+      <span class="k mono">How often it gets a problem right</span>
       <table>
-        <tr><th>System</th><th>Accuracy</th><th>Served free</th></tr>
-        <tr class="hot"><td>Tīrtha</td><td>95%</td><td>43%</td></tr>
-        <tr><td>Frontier model A</td><td>96%</td><td>—</td></tr>
-        <tr><td>Frontier model B</td><td>95%</td><td>—</td></tr>
-        <tr><td>Cheap model alone</td><td>82%</td><td><span class="free">100%</span></td></tr>
+        <tr><th>Who</th><th>Got it right</th><th>Free</th></tr>
+        <tr class="hot"><td>Tīrtha (us)</td><td>95%</td><td>43%</td></tr>
+        <tr><td>The most expensive AI</td><td>96%</td><td>—</td></tr>
+        <tr><td>Another top AI</td><td>95%</td><td>—</td></tr>
+        <tr><td>A small AI by itself</td><td>82%</td><td><span class="free">100%</span></td></tr>
       </table>
     </div>
   </section>
@@ -110,24 +112,24 @@
   <section class="feat">
     <div class="feat-head">
       <span class="mono" style="color:var(--accent)">The dial</span>
-      <h2>Accuracy and cost are one tunable curve.</h2>
-      <p>Tighten the verification layer and accuracy climbs to the frontier; loosen it and cost falls toward zero. You pick where to sit.</p>
+      <h2>Accuracy and cost move together — and you hold the dial.</h2>
+      <p>Check the work harder, and it gets as accurate as the best AI. Check lighter, and the cost drops toward nothing. You pick the spot that fits the job.</p>
     </div>
     <div class="panel rise">
-      <svg viewBox="0 0 720 300" role="img" aria-label="Accuracy and cost vs verification strength">
+      <svg viewBox="0 0 720 300" role="img" aria-label="Accuracy and cost vs how hard we check">
         <g stroke="#2c2c2f"><line x1="60" y1="40" x2="680" y2="40"/><line x1="60" y1="125" x2="680" y2="125"/><line x1="60" y1="210" x2="680" y2="210"/></g>
         <line x1="60" y1="56" x2="680" y2="56" stroke="#06B6D4" stroke-dasharray="3 5" opacity=".5"/>
-        <text x="62" y="50" fill="#06B6D4" font-size="11" font-family="JetBrains Mono,monospace">FRONTIER ACCURACY</text>
+        <text x="62" y="50" fill="#06B6D4" font-size="11" font-family="JetBrains Mono,monospace">AS GOOD AS THE BEST AI</text>
         <line x1="60" y1="150" x2="680" y2="150" stroke="#71717A" stroke-dasharray="3 5" opacity=".5"/>
-        <text x="62" y="144" fill="#A1A1AA" font-size="11" font-family="JetBrains Mono,monospace">CHEAP MODEL ALONE</text>
+        <text x="62" y="144" fill="#A1A1AA" font-size="11" font-family="JetBrains Mono,monospace">SMALL AI ALONE</text>
         <polyline points="60,150 180,98 300,86 420,68 560,56 680,56" fill="none" stroke="#4F46E5" stroke-width="3.5"/>
         <g fill="#4F46E5"><circle cx="60" cy="150" r="4"/><circle cx="180" cy="98" r="4"/><circle cx="300" cy="86" r="4"/><circle cx="420" cy="68" r="4"/><circle cx="680" cy="56" r="4"/></g>
         <circle cx="560" cy="56" r="7" fill="#4F46E5" stroke="#1C1C1E" stroke-width="2"/>
         <text x="560" y="42" fill="#4F46E5" font-size="11" font-weight="700" text-anchor="middle" font-family="JetBrains Mono,monospace">SWEET SPOT</text>
         <polyline points="60,242 180,224 300,216 420,212 560,198 680,198" fill="none" stroke="#06B6D4" stroke-width="2.5" stroke-dasharray="6 4"/>
-        <text x="370" y="285" fill="#A1A1AA" font-size="11.5" text-anchor="middle" font-family="JetBrains Mono,monospace">VERIFICATION STRENGTH  →</text>
+        <text x="370" y="285" fill="#A1A1AA" font-size="11.5" text-anchor="middle" font-family="JetBrains Mono,monospace">HOW HARD WE CHECK  →</text>
       </svg>
-      <div class="lg"><span><i class="sw" style="background:#4F46E5"></i> accuracy</span><span><i class="sw" style="background:#06B6D4"></i> cost (escalation)</span></div>
+      <div class="lg"><span><i class="sw" style="background:#4F46E5"></i> how often it's right</span><span><i class="sw" style="background:#06B6D4"></i> cost</span></div>
     </div>
   </section>
 
@@ -146,31 +148,55 @@
 
   <section class="feat">
     <div class="feat-head">
-      <span class="mono" style="color:var(--accent)">Real-world — no answer key</span>
-      <h2>It holds when the system writes its own tests.</h2>
+      <span class="mono" style="color:var(--accent)">Speed</span>
+      <h2>And it gets faster the more you use it.</h2>
+      <p>Tīrtha remembers the answers it has already checked, so work it has seen before comes straight back.</p>
     </div>
     <div class="cards">
-      <div class="card rise"><span class="k mono">Accuracy</span><div class="big" style="color:var(--accent)">82%</div><p>with the system writing and running its <b style="color:#fff">own</b> tests — no benchmark answer key.</p></div>
-      <div class="card rise"><span class="k mono">Served free</span><div class="big" style="color:#fff">62%</div><p>of requests still handled on the cheap tier under those real-world conditions.</p></div>
-      <div class="card rise"><span class="k mono">The gap</span><div class="big" style="color:#fff">measured</div><p>the distance to the ideal curve is verification quality — a number we improve, not hide.</p></div>
+      <div class="card rise"><span class="k mono">Instant</span><div class="big" style="color:var(--accent)">24×</div><h3>Repeat work, right away.</h3><p>Something it has already worked out and tested comes back about 24 times faster than asking the big AI again.</p></div>
+      <div class="card rise"><span class="k mono">Faster</span><div class="big" style="color:var(--accent)">1.4×</div><h3>Quicker on everyday code.</h3><p>For normal problems, the small AI beats the big, expensive one on speed too — about 1.4 times quicker.</p></div>
+      <div class="card rise"><span class="k mono">Grows</span><div class="big" style="color:var(--accent)">↗</div><h3>Better with every use.</h3><p>The more it runs, the more it remembers — so a bigger and bigger share of answers come back instantly.</p></div>
+    </div>
+    <p class="note">The one trade-off, said plainly: a brand-new hard problem takes a moment longer, because we stop to run and double-check it before trusting the answer.</p>
+  </section>
+
+  <section class="feat">
+    <div class="feat-head">
+      <span class="mono" style="color:var(--accent)">Real-world — no answer key</span>
+      <h2>It holds up when the system writes its own tests.</h2>
+    </div>
+    <div class="cards">
+      <div class="card rise"><span class="k mono">Accuracy</span><div class="big" style="color:var(--accent)">82%</div><p>with the system writing and checking its <b style="color:#fff">own</b> tests — no answer sheet to peek at.</p></div>
+      <div class="card rise"><span class="k mono">Free</span><div class="big" style="color:#fff">62%</div><p>of the work still handled by the small AI under those real-world conditions.</p></div>
+      <div class="card rise"><span class="k mono">The gap</span><div class="big" style="color:#fff">measured</div><p>the little bit between us and a perfect score is just how good our checking is — and we keep making it better. We show it, we don't hide it.</p></div>
     </div>
   </section>
 
   <section class="feat">
     <div class="feat-head">
       <span class="mono" style="color:var(--accent)">Why you can trust these numbers</span>
-      <h2>Numbers that survive a skeptic.</h2>
+      <h2>Numbers that hold up to a doubter.</h2>
     </div>
     <div class="cards">
-      <div class="card rise"><span class="k mono">Leak-proof</span><h3>Disjoint by construction.</h3><p>Verification tests and scoring tests never overlap — the system can't grade against what it was checked on.</p></div>
-      <div class="card rise"><span class="k mono">Reproducible · coming soon</span><h3>Run it yourself.</h3><p>We're publishing the scoring harness so you can verify every number yourself — not take our word for it. <span style="color:var(--accent)">Coming soon.</span></p></div>
-      <div class="card rise"><span class="k mono">Honest</span><h3>We retract our own.</h3><p>We caught and publicly corrected one of our own inflated early figures. Everything here survived that bar.</p></div>
+      <div class="card rise"><span class="k mono">No peeking</span><h3>We don't grade our own homework.</h3><p>The tests we use to <i>check</i> the work are kept completely separate from the tests we use to <i>score</i> it. It can't cheat by seeing the answers ahead of time.</p></div>
+      <a class="card rise" href="mailto:hello@spandaworks.com"><span class="k mono">Check it yourself · coming soon</span><h3>Run the test yourself.</h3><p>Soon we'll share the exact test, so you can check every number yourself instead of taking our word for it. <span style="color:var(--accent)">Coming soon.</span></p></a>
+      <div class="card rise"><span class="k mono">Honest</span><h3>We call out our own mistakes.</h3><p>We caught one of our own numbers that was too high — and we said so, out loud. Everything you see here passed that test.</p></div>
     </div>
   </section>
 
   <footer>
     <span>© Spanda Works LLC · Tīrtha</span>
-    <span class="mono" style="color:var(--text-2)">Leak-proof HumanEval+ (2026) · full-benchmark figures lock on completion</span>
+    <span class="mono" style="color:var(--text-2)">Tested fairly on 164 coding problems · final numbers lock when the full test finishes</span>
   </footer>
 </div>
+<script>
+const c=document.getElementById('fx'),x=c.getContext('2d');let w,h,p;
+function rs(){w=c.width=innerWidth;h=c.height=innerHeight;}
+function init(){p=Array.from({length:Math.min(120,Math.floor(w/13))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2.4+1.1,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,o:Math.random()*.4+.4,c:Math.random()>.55?'6,182,212':'79,70,229'}));}
+function loop(){x.clearRect(0,0,w,h);
+  for(let i=0;i<p.length;i++)for(let j=i+1;j<p.length;j++){const dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,dd=Math.hypot(dx,dy);if(dd<140){x.beginPath();x.moveTo(p[i].x,p[i].y);x.lineTo(p[j].x,p[j].y);x.strokeStyle='rgba(79,70,229,'+(.22*(1-dd/140))+')';x.lineWidth=1;x.stroke();}}
+  for(const d of p){d.x+=d.vx;d.y+=d.vy;if(d.x<0||d.x>w)d.vx*=-1;if(d.y<0||d.y>h)d.vy*=-1;x.beginPath();x.arc(d.x,d.y,d.r,0,7);x.fillStyle='rgba('+d.c+','+d.o+')';x.fill();}
+  requestAnimationFrame(loop);}
+addEventListener('resize',()=>{rs();init();});rs();init();loop();
+</script>
 </body></html>
