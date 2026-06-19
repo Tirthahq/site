@@ -39,8 +39,15 @@
   .eyebrow{color:var(--accent);margin-bottom:22px;display:inline-block}
   h1{font-size:clamp(2.6rem,6.4vw,64px);font-weight:500;line-height:1.04;letter-spacing:-.01em;margin-bottom:24px}
   h1 .a{color:var(--primary)}
-  .lede{font-size:18px;color:var(--text-2);max-width:600px;margin-bottom:32px}
+  .lede{font-size:18px;color:var(--text-2);max-width:600px;margin-bottom:28px}
+  .proof{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+  .proof .stat{background:var(--surface);color:#fff;border-radius:var(--r-card);padding:18px 22px;min-width:150px;flex:1}
+  .proof .num{display:block;font-size:2rem;font-weight:600;letter-spacing:-1px;line-height:1;color:var(--accent)}
+  .proof .stat:last-child .num{color:#fff}
+  .proof .cap{display:block;color:#A1A1AA;font-size:.82rem;margin-top:8px;line-height:1.4}
+  .proof-link{display:inline-block;margin-bottom:30px;color:var(--accent);font-size:14px}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:680px){.proof{flex-direction:column}}
 
   section.feat{padding:var(--section) 0}
   .feat-head{margin-bottom:36px;max-width:600px}
@@ -90,6 +97,12 @@
     <span class="eyebrow mono rise">A Spanda Works product</span>
     <h1 class="rise">Frontier-class output, <span class="a">at a fraction of the cost.</span></h1>
     <p class="lede rise">Tīrtha is a coding gateway: a fast, efficient model drafts, every answer is verified by running it, and only the genuinely hard cases escalate to a frontier model. Expert-quality code, without the expert-model bill.</p>
+    <div class="proof rise">
+      <div class="stat"><span class="num">95%</span><span class="cap">pass@1 on HumanEval+ — statistical parity with frontier models</span></div>
+      <div class="stat"><span class="num">43%</span><span class="cap">of requests served free on the cheap tier</span></div>
+      <div class="stat"><span class="num">your dial</span><span class="cap">set the accuracy-to-cost trade-off yourself</span></div>
+    </div>
+    <a class="proof-link mono rise" href="results.html">See how we measured it →</a>
     <div class="cta-row rise">
       <a class="btn" href="#access">Get early access</a>
       <a class="btn ghost" href="results.html">Explore our work</a>
