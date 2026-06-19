@@ -1,0 +1,163 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tīrtha — Results</title>
+<style>
+  /* Auralis design tokens — matched to spanda-auralis.html */
+  :root{
+    --primary:#4F46E5; --secondary:#FFFFFF; --accent:#06B6D4;
+    --bg:#FFFFFF; --surface:#1C1C1E; --text:#111827; --text-2:#4B5563; --border:#E5E7EB;
+    --r-card:8px; --r-pill:9999px; --section:80px; --pad:24px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:"Geist",ui-sans-serif,system-ui,sans-serif;line-height:1.6}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  a{color:inherit;text-decoration:none}
+  .wrap{position:relative;z-index:1;width:min(1140px,calc(100% - 48px));margin:0 auto}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--border)}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.04em}
+  .brand .dot{width:11px;height:11px;border-radius:var(--r-pill);background:var(--primary)}
+  nav .links{display:flex;gap:28px}
+  nav .links a{color:var(--text-2);font-size:14px}
+  nav .links a:hover,nav .links a.on{color:var(--text)}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-cta .signin{color:var(--text-2);font-size:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 20px;border-radius:var(--r-pill);background:var(--primary);color:#fff;font-weight:600;font-size:14px;border:1px solid transparent;transition:.18s}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--border)}
+
+  .hero{padding:80px 0 56px;max-width:860px}
+  .eyebrow{color:var(--accent);margin-bottom:22px;display:inline-block}
+  h1{font-size:clamp(2.4rem,5.6vw,56px);font-weight:500;line-height:1.05;letter-spacing:-.01em;margin-bottom:22px}
+  h1 .a{color:var(--primary)}
+  .lede{font-size:18px;color:var(--text-2);max-width:620px}
+  .draftpill{display:inline-block;margin-top:22px;border:1px solid var(--border);border-radius:var(--r-pill);padding:5px 14px;color:var(--text-2)}
+
+  section.feat{padding:64px 0}
+  .feat-head{margin-bottom:28px;max-width:640px}
+  .feat-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:500;line-height:1.1;margin-top:12px}
+  .feat-head p{color:var(--text-2);margin-top:10px}
+
+  /* dark surface card, exactly like Auralis */
+  .panel{background:var(--surface);color:#fff;border-radius:var(--r-card);padding:32px;box-shadow:0 10px 30px rgba(17,24,39,.10)}
+  .panel .k{color:var(--accent);display:block;margin-bottom:18px}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{padding:12px 10px;text-align:right;border-bottom:1px solid #2c2c2f}
+  th{color:#A1A1AA;font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  td:first-child,th:first-child{text-align:left}
+  tr:last-child td{border-bottom:0}
+  tr.hot td{color:var(--accent);font-weight:700}
+  td .free{color:#A1A1AA;font-size:13px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--surface);color:#fff;border-radius:var(--r-card);padding:var(--pad);box-shadow:0 10px 30px rgba(17,24,39,.10)}
+  .card .k{color:var(--accent);margin-bottom:14px;display:block}
+  .card .big{font-size:2.6rem;font-weight:600;letter-spacing:-1px;line-height:1;margin-bottom:8px}
+  .card h3{font-size:1.15rem;font-weight:500;margin-bottom:8px}
+  .card p{color:#A1A1AA;font-size:.95rem}
+
+  .lg{display:flex;gap:22px;margin-top:16px;font-size:13px;color:#A1A1AA;flex-wrap:wrap}
+  .lg span{display:inline-flex;align-items:center;gap:8px}.sw{width:22px;height:3px;border-radius:2px;display:inline-block}
+  .cap{color:#A1A1AA;font-size:14px;margin-top:14px}
+  svg{width:100%;height:auto;display:block}
+
+  footer{border-top:1px solid var(--border);padding:30px 0 56px;color:var(--text-2);font-size:.88rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .rise{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(max-width:820px){nav .links{display:none}.cards{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="spanda-auralis.html"><span class="dot"></span>Tīrtha</a>
+    <div class="links">
+      <a href="spanda-auralis.html#how">How it works</a>
+      <a href="spanda-auralis.html#why">Why us</a>
+      <a class="on" href="results.html">Results</a>
+      <a href="mailto:hello@spandaworks.com">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="signin" href="mailto:hello@spandaworks.com">Sign in</a>
+      <a class="btn" href="spanda-auralis.html#access">Get early access</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow mono rise">Published results</span>
+    <h1 class="rise">Frontier accuracy. <span class="a">A fraction of the cost.</span> Measured.</h1>
+    <p class="lede rise">A small model does the routine work; a verification layer decides when to escalate. The result is frontier-level accuracy with most requests served on the cheap tier — leak-proof and reproducible.</p>
+    <span class="draftpill mono rise">Draft · figures lock when the full-benchmark run completes</span>
+  </header>
+
+  <section class="feat">
+    <div class="feat-head">
+      <span class="mono" style="color:var(--accent)">Head-to-head — HumanEval+ · 164 problems · leak-proof</span>
+      <h2>Statistical parity with the frontier — at 43% served free.</h2>
+    </div>
+    <div class="panel rise">
+      <span class="k mono">pass@1</span>
+      <table>
+        <tr><th>System</th><th>Accuracy</th><th>Served free</th></tr>
+        <tr class="hot"><td>Tīrtha</td><td>95%</td><td>43%</td></tr>
+        <tr><td>Frontier model A</td><td>96%</td><td>—</td></tr>
+        <tr><td>Frontier model B</td><td>95%</td><td>—</td></tr>
+        <tr><td>Cheap model alone</td><td>82%</td><td><span class="free">100%</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="feat-head">
+      <span class="mono" style="color:var(--accent)">The dial</span>
+      <h2>Accuracy and cost are one tunable curve.</h2>
+      <p>Tighten the verification layer and accuracy climbs to the frontier; loosen it and cost falls toward zero. You pick where to sit.</p>
+    </div>
+    <div class="panel rise">
+      <svg viewBox="0 0 720 300" role="img" aria-label="Accuracy and cost vs verification strength">
+        <g stroke="#2c2c2f"><line x1="60" y1="40" x2="680" y2="40"/><line x1="60" y1="125" x2="680" y2="125"/><line x1="60" y1="210" x2="680" y2="210"/></g>
+        <line x1="60" y1="56" x2="680" y2="56" stroke="#06B6D4" stroke-dasharray="3 5" opacity=".5"/>
+        <text x="62" y="50" fill="#06B6D4" font-size="11" font-family="JetBrains Mono,monospace">FRONTIER ACCURACY</text>
+        <line x1="60" y1="150" x2="680" y2="150" stroke="#71717A" stroke-dasharray="3 5" opacity=".5"/>
+        <text x="62" y="144" fill="#A1A1AA" font-size="11" font-family="JetBrains Mono,monospace">CHEAP MODEL ALONE</text>
+        <polyline points="60,150 180,98 300,86 420,68 560,56 680,56" fill="none" stroke="#4F46E5" stroke-width="3.5"/>
+        <g fill="#4F46E5"><circle cx="60" cy="150" r="4"/><circle cx="180" cy="98" r="4"/><circle cx="300" cy="86" r="4"/><circle cx="420" cy="68" r="4"/><circle cx="680" cy="56" r="4"/></g>
+        <circle cx="560" cy="56" r="7" fill="#4F46E5" stroke="#1C1C1E" stroke-width="2"/>
+        <text x="560" y="42" fill="#4F46E5" font-size="11" font-weight="700" text-anchor="middle" font-family="JetBrains Mono,monospace">SWEET SPOT</text>
+        <polyline points="60,242 180,224 300,216 420,212 560,198 680,198" fill="none" stroke="#06B6D4" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <text x="370" y="285" fill="#A1A1AA" font-size="11.5" text-anchor="middle" font-family="JetBrains Mono,monospace">VERIFICATION STRENGTH  →</text>
+      </svg>
+      <div class="lg"><span><i class="sw" style="background:#4F46E5"></i> accuracy</span><span><i class="sw" style="background:#06B6D4"></i> cost (escalation)</span></div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="feat-head">
+      <span class="mono" style="color:var(--accent)">Real-world — no answer key</span>
+      <h2>It holds when the system writes its own tests.</h2>
+    </div>
+    <div class="cards">
+      <div class="card rise"><span class="k mono">Accuracy</span><div class="big" style="color:var(--accent)">82%</div><p>with the system writing and running its <b style="color:#fff">own</b> tests — no benchmark answer key.</p></div>
+      <div class="card rise"><span class="k mono">Served free</span><div class="big" style="color:#fff">62%</div><p>of requests still handled on the cheap tier under those real-world conditions.</p></div>
+      <div class="card rise"><span class="k mono">The gap</span><div class="big" style="color:#fff">measured</div><p>the distance to the ideal curve is verification quality — a number we improve, not hide.</p></div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="feat-head">
+      <span class="mono" style="color:var(--accent)">Why you can trust these numbers</span>
+      <h2>Numbers that survive a skeptic.</h2>
+    </div>
+    <div class="cards">
+      <div class="card rise"><span class="k mono">Leak-proof</span><h3>Disjoint by construction.</h3><p>Verification tests and scoring tests never overlap — the system can't grade against what it was checked on.</p></div>
+      <div class="card rise"><span class="k mono">Reproducible</span><h3>Run it yourself.</h3><p>The scoring harness is open. We'd rather you check than take our word.</p></div>
+      <div class="card rise"><span class="k mono">Honest</span><h3>We retract our own.</h3><p>We caught and publicly corrected one of our own inflated early figures. Everything here survived that bar.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© Spanda Works LLC · Tīrtha</span>
+    <span class="mono" style="color:var(--text-2)">Leak-proof HumanEval+ (2026) · full-benchmark figures lock on completion</span>
+  </footer>
+</div>
+</body></html>
