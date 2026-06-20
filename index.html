@@ -3,122 +3,214 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spanda Works — grounded, verified AI</title>
+<title>Spanda Works | Architects of AI</title>
+<meta name="description" content="Spanda Works is a product studio building frontier-level AI systems grounded in verification. Our products run, test, and prove every answer instead of guessing. Makers of Tīrtha and RecompOS.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://spandaworks.com/#org",
+      "name": "Spanda Works",
+      "legalName": "Spanda Works LLC",
+      "url": "https://spandaworks.com",
+      "email": "hello@spandaworks.com",
+      "slogan": "Architects of AI",
+      "foundingDate": "2026",
+      "description": "A product studio building frontier-level AI systems grounded in verification. Our products run, test, and prove every answer instead of guessing."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Tirtha",
+      "alternateName": "Tīrtha",
+      "url": "https://tirtha.ai",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web, API",
+      "publisher": { "@id": "https://spandaworks.com/#org" },
+      "description": "A verification-gated coding API that scores 95% on HumanEval+ (frontier parity) while paying for a frontier model on only 27 to 57% of calls. A local model drafts, the system runs and tests every answer, and only the genuinely hard problems escalate."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "RecompOS",
+      "url": "https://recompos.app",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web, iOS",
+      "publisher": { "@id": "https://spandaworks.com/#org" },
+      "description": "A consumer GLP-1 body-recomposition app for tracking medication schedules, doses, and symptoms with structured progress signals and an AI coach."
+    }
+  ]
+}
+</script>
 <style>
-  /* Synthetix design — dark, grid, outlined */
   :root{
-    --bg:#08080C; --text:#FFFFFF; --muted:#9AA3B2;
-    --primary:#3B82F6; --tertiary:#7C3FFC; --border:rgba(255,255,255,.14);
-    --section:112px;
+    --bg:#050505; --surface:#18181B; --text:#FFFFFF; --text-2:#A1A1AA; --border:#27272A;
+    --r:8px; --pill:9999px; --section:120px; --maxw:1200px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:"Inter",ui-sans-serif,system-ui,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);color:var(--text);font-family:"Inter",ui-sans-serif,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .dm{font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
   a{color:inherit;text-decoration:none}
-  canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
-  .wrap{position:relative;z-index:1;width:min(1100px,calc(100% - 48px));margin:0 auto}
-  .label{font-size:14px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+  .amb{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 50% -5%, rgba(255,255,255,.06), transparent 70%),
+      radial-gradient(40% 40% at 85% 110%, rgba(255,255,255,.035), transparent 70%);}
+  .wrap{position:relative;z-index:1;width:min(var(--maxw),calc(100% - 48px));margin:0 auto}
 
-  nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--border)}
-  .brand{font-weight:600;letter-spacing:.06em;font-size:15px}
-  nav .links{display:flex;gap:28px;align-items:center}
-  nav .links a{color:var(--muted);font-weight:500;transition:.15s}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0;position:sticky;top:0;z-index:50;
+    background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+  nav.scrolled{border-bottom:1px solid var(--border)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:.16em;font-size:12px;font-family:"JetBrains Mono",monospace;text-transform:uppercase}
+  .brand .mk{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 14px rgba(255,255,255,.6)}
+  nav .links{display:flex;gap:34px}
+  nav .links a{color:var(--text-2);font-size:13px;transition:.18s}
   nav .links a:hover{color:var(--text)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:9999px;font-weight:500;font-size:14px;transition:.15s ease}
-  .btn.primary{background:#fff;color:#000;border:1px solid #fff}
-  .btn.primary:hover{background:rgba(255,255,255,.88)}
-  .btn.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2)}
-  .btn.secondary:hover{border-color:rgba(255,255,255,.55)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 20px;border-radius:var(--pill);
+    background:#fff;color:#050505;font-weight:600;font-size:13px;border:1px solid #fff;transition:.18s}
+  .btn:hover{transform:translateY(-1px);filter:brightness(.92)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--border)}
+  .btn.ghost:hover{border-color:#52525B;background:rgba(255,255,255,.02)}
 
-  .hero{padding:128px 0 96px;max-width:760px}
-  .hero .eyebrow{color:var(--primary);margin-bottom:24px;display:inline-block}
-  h1{font-size:clamp(2.6rem,6vw,60px);font-weight:500;line-height:1.02;letter-spacing:-.025em;margin-bottom:24px}
-  h1 .a{color:var(--primary)}
-  .hero p{font-size:16px;line-height:1.6;color:var(--muted);max-width:540px;margin-bottom:36px}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .hero{padding:108px 0 64px;max-width:920px}
+  .eyebrow{color:var(--text-2);display:inline-flex;align-items:center;gap:12px;margin-bottom:30px}
+  .eyebrow::before{content:"";width:28px;height:1px;background:#52525B;display:inline-block}
+  h1{font-size:clamp(2.8rem,7vw,76px);font-weight:500;line-height:1.02;letter-spacing:-.02em}
+  h1 .dim{color:var(--text-2)}
+  .lede{font-size:19px;color:var(--text-2);max-width:620px;margin-top:30px;line-height:1.65}
+  .lede b{color:var(--text);font-weight:500}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
 
-  section.products{padding:0 0 var(--section)}
-  .sec-label{color:var(--primary);margin-bottom:40px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .card{border:1px solid var(--border);padding:40px;display:block;transition:.18s ease;min-height:260px;display:flex;flex-direction:column}
-  .card:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.02)}
-  .card .k{font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:auto}
-  .card.tirtha .k{color:var(--primary)}
-  .card.recompos .k{color:var(--tertiary)}
-  .card h2{font-size:26px;font-weight:500;line-height:1.15;letter-spacing:-.02em;margin:48px 0 12px;min-height:2.4em}
-  .card p{color:var(--muted);font-size:14px;line-height:20px;margin-bottom:24px}
-  .card .go{font-weight:500;color:#fff}
-  .card.tirtha .go .ar{color:var(--primary)}
-  .card.recompos .go .ar{color:var(--tertiary)}
+  .figure{position:relative;margin:24px 0 0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+  .figure img{width:100%;height:auto;display:block;filter:grayscale(1) contrast(1.04);opacity:.92}
+  .figure .cap{position:absolute;left:18px;bottom:16px;color:#D4D4D8;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+  .figure.tall img{aspect-ratio:16/10;object-fit:cover}
 
-  footer{border-top:1px solid var(--border);padding:28px 0 64px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+  .proofstrip{display:flex;border:1px solid var(--border);border-radius:var(--r);margin-top:18px;overflow:hidden;background:var(--surface)}
+  .proofstrip .s{flex:1;padding:22px 24px;border-right:1px solid var(--border)}
+  .proofstrip .s:last-child{border-right:0}
+  .proofstrip .s .n{font-family:"DM Sans",sans-serif;font-size:1.55rem;font-weight:500;color:#fff;letter-spacing:-.01em}
+  .proofstrip .s .l{color:var(--text-2);font-size:.83rem;margin-top:5px;line-height:1.4}
+  @media(max-width:680px){.proofstrip{flex-direction:column}.proofstrip .s{border-right:0;border-bottom:1px solid var(--border)}.proofstrip .s:last-child{border-bottom:0}}
+  .pcard .kpi{margin-top:18px;color:var(--text-2);font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
 
-  @media(max-width:760px){nav .links a:not(:last-child){display:none}.grid{grid-template-columns:1fr}.hero{padding:88px 0 64px}}
+  section.block{padding:var(--section) 0}
+  .lead{max-width:680px;margin-bottom:48px}
+  .lead h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin-top:16px}
+  .lead p{color:var(--text-2);margin-top:16px;font-size:1.05rem}
+
+  .products{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pcard{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+    padding:38px 34px;min-height:300px;transition:.22s;overflow:hidden}
+  .pcard:hover{transform:translateY(-4px);border-color:#3F3F46;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .pcard .ix{color:var(--text-2)}
+  .pcard h3{font-size:1.9rem;font-weight:500;letter-spacing:-.01em;margin:18px 0 6px}
+  .pcard .tag{color:var(--text-2);font-size:.95rem;margin-bottom:18px}
+  .pcard p{color:var(--text-2);font-size:.97rem;line-height:1.6;flex:1}
+  .pcard .go{display:inline-flex;align-items:center;gap:9px;margin-top:24px;color:#fff;font-weight:500;font-size:.95rem}
+  .pcard .go .ar{transition:transform .2s}
+  .pcard:hover .go .ar{transform:translateX(5px)}
+  .pcard .glow{position:absolute;inset:0;background:radial-gradient(120% 80% at 100% 0,rgba(255,255,255,.05),transparent 60%);opacity:0;transition:.22s;pointer-events:none}
+  .pcard:hover .glow{opacity:1}
+
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,80px);align-items:center}
+  .split .figure{margin:0}
+  .principle{display:flex;flex-direction:column;gap:22px}
+  .principle .p{border-left:1px solid var(--border);padding:2px 0 2px 20px}
+  .principle .p b{display:block;font-size:1.12rem;font-weight:500;margin-bottom:5px;font-family:"DM Sans",sans-serif}
+  .principle .p span{color:var(--text-2);font-size:.96rem;line-height:1.55}
+
+  footer{border-top:1px solid var(--border);padding:46px 0 64px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+  footer .c{color:var(--text-2);font-size:.88rem}
+
+  .rise{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}.rise:nth-child(4){animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(max-width:860px){nav .links{display:none}.products{grid-template-columns:1fr}.split{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<canvas id="bg"></canvas>
+<div class="amb"></div>
 <div class="wrap">
-  <nav>
-    <span class="brand">SPANDA WORKS</span>
+  <nav id="nav">
+    <a class="brand" href="/"><span class="mk"></span>Spanda Works</a>
     <div class="links">
       <a href="#products">Products</a>
+      <a href="#approach">Approach</a>
       <a href="mailto:hello@spandaworks.com">Contact</a>
-      <a class="btn secondary" href="mailto:hello@spandaworks.com">Get in touch</a>
     </div>
+    <a class="btn ghost" href="mailto:hello@spandaworks.com?subject=Partner%20with%20Spanda%20Works">Partner with us</a>
   </nav>
 
   <header class="hero">
-    <span class="eyebrow label">AI Studio</span>
-    <h1>Grounded AI, <span class="a">proven, not promised.</span></h1>
-    <p>We build AI that lets small, efficient models do frontier-class work — checked by execution, never assumed. Quality you can verify, at a fraction of the cost.</p>
-    <div class="cta-row">
-      <a class="btn primary" href="#products">See our products</a>
-      <a class="btn secondary" href="mailto:hello@spandaworks.com">Contact</a>
+    <h1 class="dm rise">Architects of AI</h1>
+    <p class="lede rise">Spanda Works is a product studio building frontier-level AI systems. We demonstrate accuracy, speed, and security in what we ship, not in what we promise.</p>
+    <div class="figure tall rise">
+      <img src="team-glass.jpg" alt="Builders at work in the Spanda Works studio">
+    </div>
+    <div class="proofstrip rise">
+      <div class="s"><div class="n">95%</div><div class="l">HumanEval+ frontier parity (Tīrtha)</div></div>
+      <div class="s"><div class="n">27 to 57%</div><div class="l">of calls that ever reach a frontier model</div></div>
+      <div class="s"><div class="n">Measured</div><div class="l">every number proven, never just claimed</div></div>
     </div>
   </header>
 
-  <section class="products" id="products">
-    <p class="sec-label label">Our products</p>
-    <div class="grid">
-      <a class="card tirtha" href="https://tirtha.ai" target="_blank" rel="noopener">
-        <span class="k">Tīrtha</span>
-        <h2>Frontier-class code, at a fraction of the cost.</h2>
-        <p>A verification-gated coding gateway — a fast model drafts, every answer is run and checked, and only the hard cases escalate to a frontier model.</p>
-        <span class="go">Visit tirtha.ai <span class="ar">→</span></span>
+  <section class="block" id="products">
+    <div class="lead">
+      <span class="mono" style="color:var(--text-2)">What we build</span>
+      <h2 class="dm">Two products. One discipline.</h2>
+      <p>Different domains, the same conviction: software should verify its output, not hope. Each product is a vertical built on that floor.</p>
+    </div>
+    <div class="products">
+      <a class="pcard rise" href="https://tirtha.ai" target="_blank" rel="noopener">
+        <div class="glow"></div>
+        <span class="ix mono">X-01 / Live</span>
+        <h3 class="dm">Tīrtha</h3>
+        <div class="tag">Frontier-class code, a fraction of the cost.</div>
+        <p>A verification-gated coding API. A local model drafts the answer, the system runs and tests it, and only the genuinely hard problems escalate to a frontier model. You get frontier accuracy, paid for only where it is earned.</p>
+        <div class="kpi">95% HumanEval+, frontier on only 27 to 57% of calls</div>
+        <span class="go">Visit tirtha.ai</span>
       </a>
-      <a class="card recompos" href="https://recompos.app" target="_blank" rel="noopener">
-        <span class="k">RecompOS</span>
-        <h2>Health, structured.</h2>
-        <p>A consumer GLP-1 body-recomposition app — medication schedules, doses, and symptoms tracked with structured progress signals.</p>
-        <span class="go">Visit recompos.app <span class="ar">→</span></span>
+      <a class="pcard rise" href="https://recompos.app" target="_blank" rel="noopener">
+        <div class="glow"></div>
+        <span class="ix mono">X-02 / Live</span>
+        <h3 class="dm">RecompOS</h3>
+        <div class="tag">Health, structured.</div>
+        <p>A consumer GLP-1 body-recomposition app. It tracks medication schedules, doses, and symptoms with structured progress signals, and an AI coach that guides instead of guessing.</p>
+        <div class="kpi">GLP-1, TRT, peptides, longevity</div>
+        <span class="go">Visit recompos.app</span>
       </a>
     </div>
   </section>
 
+  <section class="block" id="approach">
+    <div class="split">
+      <div class="figure rise">
+        <img src="team-build.jpg" alt="The team building grounded systems">
+      </div>
+      <div class="principle rise">
+        <span class="mono" style="color:var(--text-2)">The approach</span>
+        <h2 class="dm" style="font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:500;line-height:1.1;margin:14px 0 8px">We don't ship guesses.</h2>
+        <div class="p"><b>Verify, don't trust.</b><span>The deterministic core (safety, money, correctness) is code with guarantees. The model assists around it. It never decides it.</span></div>
+        <div class="p"><b>Earn the frontier.</b><span>Local models that cost pennies to run do the everyday work. We escalate to expensive models only where the work genuinely demands it, and we measure the line.</span></div>
+        <div class="p"><b>Honest by default.</b><span>Every number we publish is measured and verified. That's our promise to you.</span></div>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <span>© 2026 Spanda Works LLC · Building grounded, verified AI.</span>
-    <span>hello@spandaworks.com</span>
+    <span class="brand"><span class="mk"></span>Spanda Works</span>
+    <span class="c">© 2026 Spanda Works LLC. Grounded, verified AI.</span>
+    <span class="mono" style="color:var(--text-2)">hello@spandaworks.com</span>
   </footer>
 </div>
 <script>
-// Breathing dot-matrix field (Synthetix)
-const c=document.getElementById('bg'),x=c.getContext('2d');let w,h,t=0,mx=0,my=0;
-function rs(){w=c.width=innerWidth;h=c.height=innerHeight;}
-addEventListener('resize',rs);rs();
-addEventListener('pointermove',e=>{mx=(e.clientX/w-.5)*8;my=(e.clientY/h-.5)*8;});
-function loop(){x.clearRect(0,0,w,h);t+=.012;const gap=40;
-  for(let i=gap;i<w;i+=gap)for(let j=gap;j<h;j+=gap){
-    const pulse=.5+.5*Math.sin(t+(i+j)*.005);
-    const o=.05+pulse*.13;
-    x.beginPath();x.arc(i+mx*pulse,j+my*pulse,1.1,0,7);
-    x.fillStyle='rgba(59,130,246,'+o+')';x.fill();
-  }
-  requestAnimationFrame(loop);}
-loop();
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
 </script>
 </body>
 </html>

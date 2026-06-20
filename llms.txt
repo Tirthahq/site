@@ -1,0 +1,18 @@
+# Spanda Works
+
+> Spanda Works is a product studio building frontier-level AI systems grounded in verification. Our products run, test, and prove every answer instead of guessing. We demonstrate accuracy, speed, and security in what we ship, not in what we promise.
+
+## Products
+
+- [Tirtha (Tīrtha)](https://tirtha.ai): A verification-gated coding API. A local model drafts the answer, the system runs and tests it, and only the genuinely hard problems escalate to a frontier model. Scores 95% on HumanEval+ (frontier parity with Claude and Codex) while paying for a frontier model on only 27 to 57% of calls.
+- [RecompOS](https://recompos.app): A consumer GLP-1 body-recomposition app. Tracks medication schedules, doses, and symptoms with structured progress signals, plus an AI coach that guides instead of guessing. Covers GLP-1, TRT, peptides, and longevity protocols.
+
+## Approach
+
+- Verify, don't trust: the deterministic core (safety, money, correctness) is code with guarantees. The model assists around it. It never decides it.
+- Earn the frontier: cheap, local models do the everyday work. We escalate to expensive models only where the work genuinely demands it, and we measure the line.
+- Honest by default: every number we publish is measured, not claimed. When we catch our own mistake, we say so out loud.
+
+## Contact
+
+- Email: hello@spandaworks.com
