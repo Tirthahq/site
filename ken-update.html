@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spanda Works — Update</title>
+<style>
+  :root{
+    --indigo:#4F46E5; --indigo2:#6366F1; --cyan:#06B6D4; --ink:#0F172A; --muted:#64748B;
+    --line:#E5E8F0; --soft:#F4F6FB; --bg:#FBFBFE; --good:#10B981; --warn:#E2733A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  @page{ size:1280px 720px; margin:0; }
+  html,body{ font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .mono{ font-family:"SF Mono","JetBrains Mono",Menlo,monospace; }
+  .slide{
+    position:relative; width:1280px; height:720px; padding:72px 88px; overflow:hidden;
+    page-break-after:always; background:var(--bg);
+    display:flex; flex-direction:column;
+  }
+  .slide::before{ content:""; position:absolute; top:0; left:0; right:0; height:6px;
+    background:linear-gradient(90deg,var(--indigo),var(--cyan)); }
+  .kicker{ font-size:15px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--indigo); margin-bottom:18px; }
+  h1{ font-size:52px; line-height:1.05; font-weight:800; letter-spacing:-.02em; }
+  /* solid accent — gradient-clipped text goes transparent when Chrome prints to PDF, so use a solid color */
+  h1 .acc{ color:var(--indigo); }
+  .lead{ font-size:23px; line-height:1.5; color:#334155; max-width:62ch; margin-top:22px; }
+  .lead b{ color:var(--ink); }
+  .row{ display:flex; gap:48px; flex:1; align-items:center; margin-top:30px; }
+  .col{ flex:1; }
+  footer{ position:absolute; left:88px; right:88px; bottom:34px; display:flex; justify-content:space-between;
+    font-size:14px; color:var(--muted); border-top:1px solid var(--line); padding-top:14px; }
+  footer .link{ color:var(--indigo); font-weight:600; }
+  .badge{ display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; color:#047857;
+    font-weight:700; font-size:15px; padding:7px 14px; border-radius:999px; border:1px solid #A7F3D0; }
+  .dot{ width:9px; height:9px; border-radius:50%; background:var(--good); display:inline-block; }
+  .pill{ display:inline-block; background:var(--soft); border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; font-size:15px; font-weight:600; color:#475569; margin:4px 6px 4px 0; }
+  .stat{ font-size:64px; font-weight:800; letter-spacing:-.03em; }
+  .stat .u{ font-size:26px; color:var(--muted); font-weight:700; }
+  .label{ font-size:16px; color:var(--muted); margin-top:4px; }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px 28px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; width:100%; }
+  /* cover */
+  .cover{ justify-content:center; }
+  .wordmark{ font-size:30px; font-weight:800; letter-spacing:-.01em; }
+  .wordmark .d{ color:var(--cyan); }
+  .cover h1{ font-size:74px; margin-top:26px; max-width:20ch; }
+  .cover .lead{ font-size:25px; margin-top:28px; }
+  .legend{ display:flex; gap:22px; font-size:15px; color:#475569; margin-top:14px; flex-wrap:wrap;}
+  .legend span{ display:inline-flex; align-items:center; gap:8px; }
+  .sw{ width:14px; height:14px; border-radius:4px; display:inline-block; }
+  .note{ font-size:14px; color:var(--muted); margin-top:10px; }
+  .big{ font-size:30px; line-height:1.32; font-weight:600; color:#1E293B; max-width:24ch;}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="wordmark">Spanda<span class="d">·</span>Works</div>
+  <h1>Frontier-quality AI, at <span class="acc">a fraction of the price.</span></h1>
+  <div class="lead">And it is not a slide. It is <b>live right now</b> — a working engine you can use on this call.</div>
+  <div style="margin-top:34px"><span class="badge"><span class="dot"></span> Live in production · June 2026</span></div>
+  <footer><span class="link">spandaworks.com</span><span>Investor update</span></footer>
+</section>
+
+<!-- 2 PROBLEM -->
+<section class="slide">
+  <div class="kicker">01 · The problem</div>
+  <h1>Cheap AI, or good AI.<br>Right now you can't have both.</h1>
+  <div class="row">
+    <div class="col">
+      <p class="lead">The best AI is excellent but <b>expensive every single time you use it.</b> The cheap AI is affordable but you can't trust it to be right. So everyone who needs good answers ends up paying top dollar — even for the easy questions.</p>
+    </div>
+    <div class="col">
+      <!-- quality vs cost scatter -->
+      <svg viewBox="0 0 520 360" width="100%">
+        <line x1="70" y1="300" x2="500" y2="300" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="70" y1="40" x2="70" y2="300" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="285" y="338" text-anchor="middle" fill="#64748B" font-size="15">cost  →</text>
+        <text x="34" y="170" text-anchor="middle" fill="#64748B" font-size="15" transform="rotate(-90 34 170)">quality  →</text>
+        <!-- cheap: low cost low quality -->
+        <circle cx="150" cy="250" r="13" fill="#94A3B8"/>
+        <text x="150" y="285" text-anchor="middle" fill="#475569" font-size="15" font-weight="700">cheap AI</text>
+        <!-- frontier: high cost high quality -->
+        <circle cx="430" cy="90" r="13" fill="#94A3B8"/>
+        <text x="430" y="74" text-anchor="middle" fill="#475569" font-size="15" font-weight="700">frontier AI</text>
+        <!-- the gap -->
+        <line x1="165" y1="240" x2="415" y2="100" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 6"/>
+        <text x="290" y="186" text-anchor="middle" fill="#94A3B8" font-size="14">the gap everyone pays for</text>
+      </svg>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 02</span></footer>
+</section>
+
+<!-- 3 INSIGHT -->
+<section class="slide">
+  <div class="kicker">02 · The insight</div>
+  <h1>It's cheaper to <span class="acc">check</span> an answer<br>than to write one.</h1>
+  <p class="lead">Writing a good answer is hard. But <b>checking</b> if an answer is right can be easy. With code, you can simply <b>run it and see if it works.</b> So we let a cheap AI take the first try, then check its work automatically. If it passes, we just got a great answer for almost nothing.</p>
+  <div style="margin-top:30px">
+    <span class="pill">Code → run the tests</span>
+    <span class="pill">Law → does the case it cited actually exist?</span>
+    <span class="pill">Medicine → does it match trusted sources?</span>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 03</span></footer>
+</section>
+
+<!-- 4 WHAT WE BUILT -->
+<section class="slide">
+  <div class="kicker">03 · What we built — the verified cascade</div>
+  <h1>A team, not a single model.</h1>
+  <div class="row">
+    <div class="col" style="flex:1.15">
+      <svg viewBox="0 0 620 320" width="100%">
+        <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="#94A3B8"/></marker></defs>
+        <!-- cheap -->
+        <rect x="10" y="120" width="130" height="74" rx="14" fill="#fff" stroke="#C7D2FE" stroke-width="2"/>
+        <text x="75" y="150" text-anchor="middle" font-size="15" font-weight="800" fill="#4F46E5">Cheap AI</text>
+        <text x="75" y="172" text-anchor="middle" font-size="13" fill="#64748B">writes a draft</text>
+        <!-- wall -->
+        <rect x="190" y="120" width="130" height="74" rx="14" fill="#fff" stroke="#A5F3FC" stroke-width="2"/>
+        <text x="255" y="150" text-anchor="middle" font-size="15" font-weight="800" fill="#0891B2">The Wall</text>
+        <text x="255" y="172" text-anchor="middle" font-size="13" fill="#64748B">runs the tests</text>
+        <!-- serve -->
+        <rect x="370" y="40" width="140" height="70" rx="14" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="2"/>
+        <text x="440" y="70" text-anchor="middle" font-size="15" font-weight="800" fill="#047857">Pass → serve</text>
+        <text x="440" y="91" text-anchor="middle" font-size="13" fill="#059669">cheap & fast</text>
+        <!-- frontier -->
+        <rect x="370" y="205" width="140" height="70" rx="14" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="440" y="234" text-anchor="middle" font-size="15" font-weight="800" fill="#334155">Fail → Expert</text>
+        <text x="440" y="255" text-anchor="middle" font-size="13" fill="#64748B">frontier model</text>
+        <!-- cache -->
+        <rect x="540" y="120" width="72" height="74" rx="14" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="2"/>
+        <text x="576" y="150" text-anchor="middle" font-size="14" font-weight="800" fill="#4F46E5">Cache</text>
+        <text x="576" y="170" text-anchor="middle" font-size="12" fill="#64748B">remembers</text>
+        <!-- arrows -->
+        <line x1="142" y1="157" x2="186" y2="157" stroke="#94A3B8" stroke-width="2" marker-end="url(#ar)"/>
+        <path d="M322,140 C350,120 350,90 366,80" fill="none" stroke="#94A3B8" stroke-width="2" marker-end="url(#ar)"/>
+        <path d="M322,175 C350,200 350,225 366,235" fill="none" stroke="#94A3B8" stroke-width="2" marker-end="url(#ar)"/>
+        <path d="M510,75 C545,80 576,100 576,118" fill="none" stroke="#C7D2FE" stroke-width="2" marker-end="url(#ar)"/>
+      </svg>
+    </div>
+    <div class="col">
+      <p class="lead">A fast, cheap helper writes the first draft. A checker runs the code to see if it actually works. If it works, we use it. If it doesn't, only then do we pay the expensive expert. <b>Most work the cheap helper handles — so most of the time you pay very little.</b></p>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 04</span></footer>
+</section>
+
+<!-- 5 IT'S LIVE -->
+<section class="slide">
+  <div class="kicker">04 · It's real</div>
+  <h1>This isn't a roadmap.<br><span class="acc">It's running.</span></h1>
+  <div class="row">
+    <div class="col">
+      <p class="lead">Tīrtha is live on the internet today. One of our cheap helpers went down for hours — and the system just <b>shrugged, slid to a backup, and kept giving right answers.</b> Nobody would have noticed.</p>
+      <div style="margin-top:20px"><span class="badge"><span class="dot"></span> Survived a real outage — in production</span></div>
+    </div>
+    <div class="col">
+      <!-- redundancy chain -->
+      <svg viewBox="0 0 520 300" width="100%">
+        <g font-size="14" font-weight="700">
+          <rect x="20" y="40" width="140" height="56" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+          <text x="90" y="64" text-anchor="middle" fill="#94A3B8">RunPod ✕ down</text>
+          <text x="90" y="83" text-anchor="middle" fill="#94A3B8" font-weight="500" font-size="12">cheap helper 1</text>
+
+          <rect x="20" y="118" width="140" height="56" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="2"/>
+          <text x="90" y="142" text-anchor="middle" fill="#047857">Cerebras ✓</text>
+          <text x="90" y="161" text-anchor="middle" fill="#059669" font-weight="500" font-size="12">free · sub-second</text>
+
+          <rect x="20" y="196" width="140" height="56" rx="12" fill="#fff" stroke="#C7D2FE" stroke-width="2"/>
+          <text x="90" y="220" text-anchor="middle" fill="#4F46E5">Together</text>
+          <text x="90" y="239" text-anchor="middle" fill="#64748B" font-weight="500" font-size="12">backup 3</text>
+
+          <rect x="300" y="118" width="180" height="56" rx="12" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+          <text x="390" y="142" text-anchor="middle" fill="#334155">Frontier expert</text>
+          <text x="390" y="161" text-anchor="middle" fill="#64748B" font-weight="500" font-size="12">only if all 3 fail</text>
+        </g>
+        <text x="200" y="150" fill="#10B981" font-size="22" font-weight="800">→</text>
+        <text x="250" y="135" fill="#64748B" font-size="12">served here</text>
+        <line x1="160" y1="146" x2="196" y2="146" stroke="#10B981" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 05</span></footer>
+</section>
+
+<!-- 6 IT WORKS / BENCHMARKS -->
+<section class="slide">
+  <div class="kicker">05 · Proof it works</div>
+  <h1>As good as the top model on<br>everyday coding — measured.</h1>
+  <div class="row">
+    <div class="col" style="flex:1.3">
+      <!-- grouped bars -->
+      <svg viewBox="0 0 640 330" width="100%">
+        <!-- axis -->
+        <line x1="60" y1="280" x2="620" y2="280" stroke="#CBD5E1" stroke-width="2"/>
+        <g fill="#94A3B8" font-size="13">
+          <text x="50" y="284" text-anchor="end">0</text>
+          <text x="50" y="178" text-anchor="end">50</text>
+          <text x="50" y="76" text-anchor="end">100</text>
+        </g>
+        <line x1="56" y1="178" x2="620" y2="178" stroke="#EEF2F7"/>
+        <line x1="56" y1="76" x2="620" y2="76" stroke="#EEF2F7"/>
+        <!-- groups: each value% -> height px = val*2.04 ; baseline y=280 -->
+        <!-- HumanEval+: cheap82 sonnet94 tirtha95 -->
+        <!-- MBPP+: cheap70 sonnet77 tirtha76 -->
+        <!-- LiveCodeBench(hard): cheap30 sonnet77 tirtha67 -->
+        <g>
+          <!-- group1 x base 100 -->
+          <rect x="92"  y="113" width="34" height="167" rx="4" fill="#CBD5E1"/>
+          <rect x="130" y="88"  width="34" height="192" rx="4" fill="#94A3B8"/>
+          <rect x="168" y="86"  width="34" height="194" rx="4" fill="url(#g1)"/>
+          <text x="147" y="305" text-anchor="middle" font-size="14" fill="#475569" font-weight="700">Everyday code A</text>
+          <!-- group2 x base 290 -->
+          <rect x="282" y="137" width="34" height="143" rx="4" fill="#CBD5E1"/>
+          <rect x="320" y="123" width="34" height="157" rx="4" fill="#94A3B8"/>
+          <rect x="358" y="125" width="34" height="155" rx="4" fill="url(#g1)"/>
+          <text x="337" y="305" text-anchor="middle" font-size="14" fill="#475569" font-weight="700">Everyday code B</text>
+          <!-- group3 x base 480 -->
+          <rect x="472" y="219" width="34" height="61"  rx="4" fill="#CBD5E1"/>
+          <rect x="510" y="123" width="34" height="157" rx="4" fill="#94A3B8"/>
+          <rect x="548" y="143" width="34" height="137" rx="4" fill="url(#g1)"/>
+          <text x="527" y="305" text-anchor="middle" font-size="14" fill="#475569" font-weight="700">Hardest puzzles</text>
+        </g>
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+        <!-- value labels for tirtha -->
+        <g font-size="13" font-weight="800" fill="#4F46E5">
+          <text x="185" y="78" text-anchor="middle">95</text>
+          <text x="375" y="117" text-anchor="middle">76</text>
+          <text x="565" y="135" text-anchor="middle">67</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><span class="sw" style="background:#CBD5E1"></span> cheap AI alone</span>
+        <span><span class="sw" style="background:#94A3B8"></span> top frontier model</span>
+        <span><span class="sw" style="background:linear-gradient(180deg,#6366F1,#06B6D4)"></span> Tīrtha</span>
+      </div>
+    </div>
+    <div class="col">
+      <p class="lead">On standard public coding tests, Tīrtha <b>matches the top model.</b> On the very hardest puzzle problems it isn't quite there yet — and <b>we say so honestly.</b> The everyday work is most of the work, and that's where the savings are.</p>
+      <p class="note">Scores are pass-rates on public benchmarks (HumanEval+, MBPP+, LiveCodeBench). Measured clean.</p>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com/results</span><span>Spanda Works · 06</span></footer>
+</section>
+
+<!-- 7 ECONOMICS -->
+<section class="slide">
+  <div class="kicker">06 · The economics</div>
+  <h1>We <span class="acc">price the dial.</span></h1>
+  <div class="row">
+    <div class="col">
+      <p class="lead">The more routine your work, the cheaper we are — because the cheap helper handles it for almost nothing. You can see exactly where your own work lands. <b>The share we serve cheaply is the share you save.</b></p>
+      <p class="note">Bars: how much of each workload Tīrtha serves on the cheap tier (the rest escalates).</p>
+    </div>
+    <div class="col">
+      <svg viewBox="0 0 480 300" width="100%">
+        <g font-size="14" fill="#475569" font-weight="700">
+          <text x="20" y="60">Everyday code B</text>
+          <text x="20" y="140">Everyday code A</text>
+          <text x="20" y="220">Hardest puzzles</text>
+        </g>
+        <!-- tracks -->
+        <g>
+          <rect x="20" y="72" width="440" height="26" rx="13" fill="#EEF2F7"/>
+          <rect x="20" y="72" width="387" height="26" rx="13" fill="url(#g2)"/>
+          <text x="420" y="91" font-size="15" font-weight="800" fill="#4F46E5">88%</text>
+
+          <rect x="20" y="152" width="440" height="26" rx="13" fill="#EEF2F7"/>
+          <rect x="20" y="152" width="189" height="26" rx="13" fill="url(#g2)"/>
+          <text x="220" y="171" font-size="15" font-weight="800" fill="#4F46E5">43%</text>
+
+          <rect x="20" y="232" width="440" height="26" rx="13" fill="#EEF2F7"/>
+          <rect x="20" y="232" width="176" height="26" rx="13" fill="url(#g2)"/>
+          <text x="206" y="251" font-size="15" font-weight="800" fill="#4F46E5">40%</text>
+        </g>
+        <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+        <text x="20" y="288" font-size="13" fill="#94A3B8">share served cheaply  =  share you save</text>
+      </svg>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 07</span></footer>
+</section>
+
+<!-- 8 THE MOAT — CACHE COST CURVE -->
+<section class="slide">
+  <div class="kicker">07 · The moat</div>
+  <h1>It gets <span class="acc">cheaper every time</span> it's used.</h1>
+  <div class="row">
+    <div class="col">
+      <p class="lead"><b>Think of a tutor and a notebook.</b> The first time a hard problem comes up, you pay the tutor — but you write the answer in the notebook. Next time that problem appears, you just look it up. <b>Free. Instant.</b></p>
+      <p class="lead" style="margin-top:14px">Tīrtha keeps that notebook. The more it runs, the fuller it gets, and the less it pays the expert. <b>A competitor with no notebook pays full price forever — and can't catch up.</b></p>
+    </div>
+    <div class="col">
+      <svg viewBox="0 0 520 320" width="100%">
+        <line x1="60" y1="40" x2="60" y2="270" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="60" y1="270" x2="500" y2="270" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="30" y="160" text-anchor="middle" fill="#64748B" font-size="14" transform="rotate(-90 30 160)">cost per answer</text>
+        <text x="280" y="300" text-anchor="middle" fill="#64748B" font-size="14">use over time  →</text>
+        <!-- competitor flat -->
+        <line x1="60" y1="80" x2="500" y2="80" stroke="#94A3B8" stroke-width="3" stroke-dasharray="2 0"/>
+        <text x="300" y="70" fill="#94A3B8" font-size="14" font-weight="700">competitor — pays full price forever</text>
+        <!-- us bending down -->
+        <path d="M60,92 C 180,108 250,210 500,250" fill="none" stroke="url(#g3)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M60,92 C 180,108 250,210 500,250 L500,270 L60,270 Z" fill="url(#g3)" opacity="0.10"/>
+        <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+        <circle cx="500" cy="250" r="6" fill="#06B6D4"/>
+        <text x="300" y="232" fill="#0891B2" font-size="14" font-weight="800">Tīrtha — bends down as the notebook fills</text>
+        <text x="430" y="200" fill="#64748B" font-size="13">↑ the growing gap</text>
+        <text x="430" y="216" fill="#64748B" font-size="13" font-weight="700">is our margin</text>
+      </svg>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 08</span></footer>
+</section>
+
+<!-- 9 NOT A ROUTER -->
+<section class="slide">
+  <div class="kicker">08 · A new category</div>
+  <h1>They route.<br>We <span class="acc">route, verify, and remember.</span></h1>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div style="font-weight:800; font-size:18px; color:#64748B">Marketplaces / routers</div>
+        <p style="margin-top:12px; font-size:18px; color:#475569; line-height:1.5">Pass your question to different AIs and take a small cut. They don't check the answer. They don't remember it. So frontier quality always costs the frontier price.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="border-color:#C7D2FE; background:linear-gradient(180deg,#fff,#F5F7FF)">
+        <div style="font-weight:800; font-size:18px; color:#4F46E5">Spanda Works</div>
+        <p style="margin-top:12px; font-size:18px; color:#334155; line-height:1.5">We check every answer and remember the good ones. That's why we can be <b>cheaper now</b> and <b>get cheaper over time.</b> A stateless marketplace structurally can't.</p>
+      </div>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 09</span></footer>
+</section>
+
+<!-- 10 GENERALIZES -->
+<section class="slide">
+  <div class="kicker">09 · It spreads</div>
+  <h1>Checking beats guessing —<br><span class="acc">everywhere.</span></h1>
+  <div class="row">
+    <div class="col">
+      <p class="lead">The same idea works wherever you can check an answer instead of trusting it. In law, even the <b>paid, "grounded" AIs are wrong 1 in 5 to 1 in 3 times.</b> Being able to <b>prove</b> an answer is checked is worth a premium — and that work repeats, so the notebook fills fast.</p>
+      <p class="note">Legal hallucination rates, Stanford HAI (2025). Lower is better.</p>
+    </div>
+    <div class="col">
+      <svg viewBox="0 0 480 300" width="100%">
+        <line x1="150" y1="40" x2="150" y2="250" stroke="#E5E8F0"/>
+        <g font-size="14" font-weight="700" fill="#475569">
+          <text x="135" y="72" text-anchor="end">Plain GPT-4</text>
+          <text x="135" y="132" text-anchor="end">Westlaw AI</text>
+          <text x="135" y="192" text-anchor="end">Lexis+ AI</text>
+          <text x="135" y="252" text-anchor="end">Verified ✓</text>
+        </g>
+        <!-- 43%, 33%, 17%, ~0 ; scale: 280px = 50% -->
+        <rect x="150" y="56" width="241" height="26" rx="6" fill="#94A3B8"/>
+        <text x="400" y="75" font-size="14" font-weight="800" fill="#64748B">43%</text>
+        <rect x="150" y="116" width="185" height="26" rx="6" fill="#A5B4CF"/>
+        <text x="344" y="135" font-size="14" font-weight="800" fill="#64748B">33%</text>
+        <rect x="150" y="176" width="95" height="26" rx="6" fill="#C7D2FE"/>
+        <text x="254" y="195" font-size="14" font-weight="800" fill="#64748B">17%</text>
+        <rect x="150" y="236" width="14" height="26" rx="6" fill="url(#g4)"/>
+        <text x="174" y="255" font-size="14" font-weight="800" fill="#047857">≈ checked</text>
+        <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+      </svg>
+    </div>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 10</span></footer>
+</section>
+
+<!-- 11 MARKET -->
+<section class="slide">
+  <div class="kicker">10 · The market</div>
+  <h1>Big, growing, and ready for this.</h1>
+  <div class="grid3" style="margin-top:46px">
+    <div class="card"><div class="stat">84<span class="u">%</span></div><div class="label">of developers already use AI to write code</div></div>
+    <div class="card"><div class="stat">46<span class="u">%</span></div><div class="label">don't fully trust the answers — the exact thing we sell</div></div>
+    <div class="card"><div class="stat">~$8<span class="u">B</span></div><div class="label">AI coding-tools market, growing low-to-mid 20% a year</div></div>
+  </div>
+  <div class="big" style="margin-top:48px; max-width:40ch">We sell the one thing they're missing: <span style="color:#4F46E5;font-weight:800">answers you can trust, for less.</span></div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 11</span></footer>
+</section>
+
+<!-- 12 WEDGE -->
+<section class="slide">
+  <div class="kicker">11 · The plan</div>
+  <h1>Coding proves it.<br><span class="acc">Law and medicine pay for it.</span></h1>
+  <p class="lead">We start with coding because it's the easiest place to <b>prove</b> the answers are right — you just run the tests. Once people trust it there, we take the same engine into law and medicine, where a wrong answer is dangerous and being right is worth far more.</p>
+  <div style="margin-top:34px">
+    <span class="pill" style="border-color:#C7D2FE;color:#4F46E5">① Coding — prove it</span>
+    <span class="pill">② Law — citations that exist</span>
+    <span class="pill">③ Medicine — grounded, checked</span>
+  </div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 12</span></footer>
+</section>
+
+<!-- 13 THE ASK -->
+<section class="slide cover">
+  <div class="kicker">12 · The ask</div>
+  <h1>Where we are. What's next.<br><span class="acc">What we need to get there.</span></h1>
+  <div class="lead" style="max-width:54ch">The engine is built, live, and proven. The cache deepens with every use. From here it's about reach — more developers, then the verticals where trust is worth the most.</div>
+  <div style="margin-top:30px"><span class="badge"><span class="dot"></span> Live · verified · compounding</span></div>
+  <footer><span class="link">spandaworks.com</span><span>Spanda Works · 13</span></footer>
+</section>
+
+</body>
+</html>
