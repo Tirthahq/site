@@ -31,7 +31,7 @@
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web, API",
       "publisher": { "@id": "https://spandaworks.com/#org" },
-      "description": "A verification-gated coding API that scores 92.1% on HumanEval+ while calling a frontier model on only 2 of 164 problems (measured 29 July 2026). A fast, low-cost model drafts, the system runs and tests every answer, and only the genuinely hard problems escalate."
+      "description": "A verification-gated API for tool calls and code. Tool calls are checked against your schemas and code is run against your tests before it is served, and only the genuinely hard problems escalate to a frontier model. Tool calls: 749/800 on a single fixed pass of BFCL v4 Python through the production tool path; official AST re-score of the same saved strings 751/800; no multi-seed, no bootstrap interval; not a leaderboard submission."
     },
     {
       "@type": "SoftwareApplication",
@@ -154,8 +154,8 @@
     </div>
     <div class="mono rise" style="color:var(--text-2);margin-top:6px">Our flagship product · Tīrtha, by the numbers</div>
     <div class="proofstrip rise">
-      <div class="s"><div class="n">92.1%</div><div class="l">on HumanEval+ (151 of 164 problems), measured with no cache on 29 July 2026</div></div>
-      <div class="s"><div class="n">2 of 164</div><div class="l">problems needed a frontier model. A low-cost model drafted the rest, and every answer was tested before it was served</div></div>
+      <div class="s"><div class="n">749/800</div><div class="l">on a single fixed pass of BFCL v4 Python through the production tool path; official AST re-score of the same saved strings 751/800; no multi-seed, no bootstrap interval; not a leaderboard submission</div></div>
+      <div class="s"><div class="n">Checked</div><div class="l">tool calls against your schemas, code against the tests you send, before anything is served. Where there is nothing to check, we say so</div></div>
       <div class="s"><div class="n">Measured</div><div class="l">every number on this page is in our claims ledger, with the date it was measured and how</div></div>
     </div>
   </header>
@@ -171,9 +171,9 @@
         <div class="glow"></div>
         <span class="ix mono">X-01 / Live</span>
         <h3 class="dm">Tīrtha</h3>
-        <div class="tag">Frontier-class code, a fraction of the cost.</div>
+        <div class="tag">Checked tool calls and tested code, a fraction of the cost.</div>
         <p>A verification-gated coding API. A fast, low-cost model drafts the answer, the system runs and tests it, and only the genuinely hard problems escalate to a frontier model. Every answer is tested, and you pay for a frontier model only where it is earned.</p>
-        <div class="kpi">92.1% HumanEval+, frontier on 2 of 164 problems</div>
+        <div class="kpi">749/800 tool calls on a single fixed pass of BFCL v4 Python, not a leaderboard submission</div>
         <span class="go">Visit tirtha.ai</span>
       </a>
       <a class="pcard rise" href="https://recompos.app" target="_blank" rel="noopener">
