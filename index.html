@@ -6,7 +6,7 @@
 <title>Spanda Works | Architects of AI</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Spanda Works is a product studio building frontier-level AI systems grounded in verification. Our products run, test, and prove every answer instead of guessing. Makers of Tīrtha and RecompOS.">
+<meta name="description" content="Spanda Works LLC builds AI products. Makers of Tīrtha: one API for the models you need, and a router for coding agents that checks each tool call against your schema.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500;600&family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
@@ -22,8 +22,19 @@
       "url": "https://spandaworks.com",
       "email": "hello@spandaworks.com",
       "slogan": "Architects of AI",
-      "foundingDate": "2026",
-      "description": "A product studio building frontier-level AI systems grounded in verification. Our products run, test, and prove every answer instead of guessing."
+      "foundingDate": "2026-06-17",
+      "description": "Spanda Works LLC is a software company in Charleston, South Carolina, founded on June 17, 2026. We build AI products.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Charleston",
+        "addressRegion": "SC",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Tom Jones",
+        "jobTitle": "Founder and CEO"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -32,17 +43,10 @@
       "url": "https://tirtha.ai",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web, API",
-      "publisher": { "@id": "https://spandaworks.com/#org" },
-      "description": "A verification-gated API for tool calls and code. Tool calls are checked against your schemas and code is run against your tests before it is served, and only the genuinely hard problems escalate to a frontier model. Tool calls: 749/800 on a single fixed pass of BFCL v4 Python through the production tool path; official AST re-score of the same saved strings 751/800; no multi-seed, no bootstrap interval; not a leaderboard submission."
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "RecompOS",
-      "url": "https://recompos.app",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Web, iOS",
-      "publisher": { "@id": "https://spandaworks.com/#org" },
-      "description": "A consumer GLP-1 body-recomposition app for tracking medication schedules, doses, and symptoms with structured progress signals and an AI coach."
+      "publisher": {
+        "@id": "https://spandaworks.com/#org"
+      },
+      "description": "One API for the models you need, and a router for coding agents that checks each tool call against your schema."
     }
   ]
 }
@@ -165,9 +169,9 @@
 
   <section class="block" id="products">
     <div class="lead">
-      <span class="mono" style="color:var(--text-2)">What we build</span>
-      <h2 class="dm">Two products. One discipline.</h2>
-      <p>Different domains, the same conviction: software should verify its output, not hope. Each product is a vertical built on that floor.</p>
+      <span class="mono" style="color:var(--text-2)">Products</span>
+      <h2 class="dm">What we build</h2>
+      <p>Software should check its own output before you rely on it. Tīrtha is built on that.</p>
     </div>
     <div class="products">
       <a class="pcard rise" href="https://tirtha.ai" target="_blank" rel="noopener">
@@ -178,15 +182,6 @@
         <p>A verification-gated coding API. A fast, low-cost model drafts the answer, the system runs and tests it, and only the genuinely hard problems escalate to a frontier model. Every answer is tested, and you pay for a frontier model only where it is earned.</p>
         <div class="kpi">749/800 tool calls on a single fixed pass of BFCL v4 Python, not a leaderboard submission</div>
         <span class="go">Visit tirtha.ai</span>
-      </a>
-      <a class="pcard rise" href="https://recompos.app" target="_blank" rel="noopener">
-        <div class="glow"></div>
-        <span class="ix mono">X-02 / Live</span>
-        <h3 class="dm">RecompOS</h3>
-        <div class="tag">Health, structured.</div>
-        <p>A consumer GLP-1 body-recomposition app. Tracks the medication schedules, doses and symptoms you log, with structured progress signals and an AI coach that explains your logged data. It does not give medical advice.</p>
-        <div class="kpi">Medications you log, such as GLP-1 and TRT</div>
-        <span class="go">Visit recompos.app</span>
       </a>
     </div>
   </section>
@@ -200,7 +195,7 @@
         <span class="mono" style="color:var(--text-2)">Build with us</span>
         <h2 class="dm" style="font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:500;line-height:1.1;margin:14px 0 8px">Frontier AI, built into products people use.</h2>
         <div class="p"><b>A studio that ships.</b><span>We design, build, and launch complete AI products, end to end, and the next one could be yours.</span></div>
-        <div class="p"><b>Top-tier power, a fraction of the cost.</b><span>Our systems deliver frontier-level quality while spending like a small one. Your users get the best of AI; your costs stay light.</span></div>
+        <div class="p"><b>The right model for each request.</b><span>Tīrtha's router picks a model for each request and checks each tool call against your schema before it is served.</span></div>
         <div class="p"><b>Let's build it together.</b><span>Bring us your vision and we'll engineer it, or drop our engine into what you're already building, and turn it into something people reach for every day.</span></div>
         <div class="cta-row" style="margin-top:30px">
           <a class="btn" href="mailto:hello@spandaworks.com?subject=Partner%20with%20Spanda%20Works">Partner with us</a>
