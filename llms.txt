@@ -1,17 +1,15 @@
 # Spanda Works
 
-> Spanda Works is a product studio building frontier-level AI systems grounded in verification. Our products run, test, and prove every answer instead of guessing. We demonstrate accuracy, speed, and security in what we ship, not in what we promise.
+> Spanda Works LLC is a software company in Charleston, South Carolina, founded on June 17, 2026. We build AI products.
 
 ## Products
 
-- [Tirtha (Tīrtha)](https://tirtha.ai): A verification-gated coding API. A local model drafts the answer, the system runs and tests it, and only the genuinely hard problems escalate to a frontier model. Tool calls: 749/800 on a single fixed pass of BFCL v4 Python through the production tool path; official AST re-score of the same saved strings 751/800; no multi-seed, no bootstrap interval; not a leaderboard submission.
+- [Tīrtha](https://tirtha.ai): One API for the models you need, and a router for coding agents that checks each tool call against your schema.
 - [RecompOS](https://recompos.app): A consumer GLP-1 body-recomposition app. Tracks medication schedules, doses, and symptoms with structured progress signals, plus an AI coach that guides instead of guessing. Covers GLP-1, TRT, peptides, and longevity protocols.
 
-## Approach
+## About
 
-- Verify, don't trust: the deterministic core (safety, money, correctness) is code with guarantees. The model assists around it. It never decides it.
-- Earn the frontier: cheap, local models do the everyday work. We escalate to expensive models only where the work genuinely demands it, and we measure the line.
-- Honest by default: every number we publish is measured, not claimed. When we catch our own mistake, we say so out loud.
+- Founder and CEO: Tom Jones.
 
 ## Contact
 
