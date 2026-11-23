@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spanda Works | Architects of AI</title>
+<title>Spanda Works</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Spanda Works LLC builds AI products. Makers of Tīrtha: one API for the models you need, and a router for coding agents that checks each tool call against your schema.">
@@ -72,7 +72,7 @@
     background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
   nav.scrolled{border-bottom:1px solid var(--border)}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;font-family:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;color:#fff;letter-spacing:0}
-  .brand .sw{font-size:22px;letter-spacing:-.02em;color:#fff;text-shadow:0 0 8px rgba(255,255,255,.75),0 0 20px rgba(255,255,255,.4)}
+  .brand .mark{display:block;flex:none}
   nav .links{display:flex;gap:34px}
   nav .links a{color:var(--text-2);font-size:13px;transition:.18s}
   nav .links a:hover{color:var(--text)}
@@ -143,27 +143,21 @@
 <div class="amb"></div>
 <div class="wrap">
   <nav id="nav">
-    <a class="brand" href="/"><span class="sw" aria-hidden="true">SW</span>Spanda Works</a>
+    <a class="brand" href="/"><svg class="mark" viewBox="6 14 52 40" width="34" height="26" aria-hidden="true"><path d="M12 30 A10 10 0 0 1 32 30" stroke="#E08A68" stroke-width="9" fill="none"/><circle cx="12" cy="30" r="4.5" fill="#E08A68"/><path d="M32 34 A10 10 0 0 0 52 34" stroke="#F2EFE8" stroke-width="9" fill="none"/><circle cx="52" cy="34" r="4.5" fill="#F2EFE8"/></svg>Spanda Works</a>
     <div class="links">
       <a href="#products">Products</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
       <a href="mailto:hello@spandaworks.com">Contact</a>
     </div>
-    <a class="btn ghost" href="mailto:hello@spandaworks.com?subject=Partner%20with%20Spanda%20Works">Partner with us</a>
+    <a class="btn ghost" href="https://tirtha.ai" target="_blank" rel="noopener">See Tīrtha</a>
   </nav>
 
   <header class="hero">
     <h1 class="dm rise">Architects of AI</h1>
-    <p class="lede rise">Spanda Works is a product studio building frontier-level AI systems. We demonstrate accuracy, speed, and security in what we ship, not in what we promise.</p>
+    <p class="lede rise">Spanda Works is a software company in Charleston, South Carolina. We build Tīrtha: every kind of model, one key.</p>
     <div class="figure tall rise">
-      <img src="team-glass.jpg" alt="Builders at work in the Spanda Works studio">
-    </div>
-    <div class="mono rise" style="color:var(--text-2);margin-top:6px">Our flagship product · Tīrtha, by the numbers</div>
-    <div class="proofstrip rise">
-      <div class="s"><div class="n">749/800</div><div class="l">on a single fixed pass of BFCL v4 Python through the production tool path; official AST re-score of the same saved strings 751/800; no multi-seed, no bootstrap interval; not a leaderboard submission</div></div>
-      <div class="s"><div class="n">Checked</div><div class="l">tool calls against your schemas, code against the tests you send, before anything is served. Where there is nothing to check, we say so</div></div>
-      <div class="s"><div class="n">Measured</div><div class="l">every number on this page is in our claims ledger, with the date it was measured and how</div></div>
+      <img src="team-glass.jpg" alt="People working at laptops around a table">
     </div>
   </header>
 
@@ -176,7 +170,6 @@
     <div class="products">
       <a class="pcard rise" href="https://tirtha.ai" target="_blank" rel="noopener">
         <div class="glow"></div>
-        <span class="ix mono">X-01 / Live</span>
         <h3 class="dm">Tīrtha</h3>
         <div class="tag">Checked tool calls and tested code, a fraction of the cost.</div>
         <p>A verification-gated coding API. A fast, low-cost model drafts the answer, the system runs and tests it, and only the genuinely hard problems escalate to a frontier model. Every answer is tested, and you pay for a frontier model only where it is earned.</p>
@@ -189,17 +182,16 @@
   <section class="block" id="approach">
     <div class="split">
       <div class="figure rise">
-        <img src="team-build.jpg" alt="The team building grounded systems">
+        <img src="team-build.jpg" alt="A group gathered around a laptop">
       </div>
       <div class="principle rise">
-        <span class="mono" style="color:var(--text-2)">Build with us</span>
-        <h2 class="dm" style="font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:500;line-height:1.1;margin:14px 0 8px">Frontier AI, built into products people use.</h2>
-        <div class="p"><b>A studio that ships.</b><span>We design, build, and launch complete AI products, end to end, and the next one could be yours.</span></div>
+        <span class="mono" style="color:var(--text-2)">Approach</span>
+        <h2 class="dm" style="font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:500;line-height:1.1;margin:14px 0 8px">How Tīrtha works</h2>
         <div class="p"><b>The right model for each request.</b><span>Tīrtha's router can pick a model for each request and checks each tool call against your schema before it is served.</span></div>
-        <div class="p"><b>Let's build it together.</b><span>Bring us your vision and we'll engineer it, or drop our engine into what you're already building, and turn it into something people reach for every day.</span></div>
+        <div class="p"><b>One key for every kind of model.</b><span>One API key reaches models for chat, coding, search and more, with OpenAI-compatible requests.</span></div>
         <div class="cta-row" style="margin-top:30px">
-          <a class="btn" href="mailto:hello@spandaworks.com?subject=Partner%20with%20Spanda%20Works">Partner with us</a>
-          <a class="btn ghost" href="https://tirtha.ai" target="_blank" rel="noopener">See Tīrtha</a>
+          <a class="btn" href="https://tirtha.ai" target="_blank" rel="noopener">See Tīrtha</a>
+          <span style="color:var(--text-2)">Questions: hello@spandaworks.com</span>
         </div>
       </div>
     </div>
@@ -220,8 +212,8 @@
   </section>
 
   <footer>
-    <span class="brand"><span class="sw" aria-hidden="true">SW</span>Spanda Works</span>
-    <span class="c">© 2026 Spanda Works LLC. Grounded, verified AI.</span>
+    <span class="brand"><svg class="mark" viewBox="6 14 52 40" width="34" height="26" aria-hidden="true"><path d="M12 30 A10 10 0 0 1 32 30" stroke="#E08A68" stroke-width="9" fill="none"/><circle cx="12" cy="30" r="4.5" fill="#E08A68"/><path d="M32 34 A10 10 0 0 0 52 34" stroke="#F2EFE8" stroke-width="9" fill="none"/><circle cx="52" cy="34" r="4.5" fill="#F2EFE8"/></svg>Spanda Works</span>
+    <span class="c">© 2026 Spanda Works LLC. Every kind of model, one key.</span>
     <span class="mono" style="color:var(--text-2)">hello@spandaworks.com</span>
   </footer>
 </div>
