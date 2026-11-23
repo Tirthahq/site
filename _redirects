@@ -4,3 +4,13 @@
 /ken-update/ / 301
 /ken-update.html / 301
 /wrangler.jsonc / 301
+# 11-23 10:45 (Main): the old dist/ copies were also still served from the Pages cache (dist/llms.txt = outdated claims).
+/dist/index.html / 301
+/dist/index / 301
+/dist/llms.txt / 301
+/dist/recompos.png / 301
+/dist/spanda-logo.svg / 301
+/dist/team-build.jpg / 301
+/dist/team-glass.jpg / 301
+/dist/ / 301
+/dist / 301
