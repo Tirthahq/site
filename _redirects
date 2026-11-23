@@ -1,0 +1,6 @@
+# Ship desk 11-23 (Legal 23c5a5418c): internal files from an old whole-folder deploy were still served from a Pages cache.
+# These rules answer before any asset or cache, so the old pages are never served again.
+/ken-update / 301
+/ken-update/ / 301
+/ken-update.html / 301
+/wrangler.jsonc / 301
