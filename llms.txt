@@ -5,7 +5,7 @@
 ## Products
 
 - [Tīrtha](https://tirtha.ai): One API for the models you need, and a router for coding agents that checks each tool call against your schema.
-- [RecompOS](https://recompos.app): A consumer GLP-1 body-recomposition app. Tracks medication schedules, doses, and symptoms with structured progress signals, plus an AI coach that guides instead of guessing. Covers GLP-1, TRT, peptides, and longevity protocols.
+- [RecompOS](https://recompos.app): A consumer GLP-1 body-recomposition app. Tracks the medication schedules, doses and symptoms you log, with structured progress signals and an AI coach that explains your logged data. It does not give medical advice.
 
 ## About
 
